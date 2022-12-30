@@ -13,22 +13,32 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Anime {
+
     @Id
-    private String animeId;
+    private Long animeId;
+
     private String animeTitle;
+
     private String animeImg;
+
     private String status;
 
     private String type;
+
     private String releasedDate;
+
     @Convert(converter = StringListConverter.class)
     private List<String> genres;
+
     private String synopsis;
+
     private Integer totalEpisodes;
+
     @OneToMany
     private List<Episode> episodesList;
+
     @ManyToOne
-    private User user;
+    private Userr userr;
 
 //    private Title titles;
 //    private Double averageRating;

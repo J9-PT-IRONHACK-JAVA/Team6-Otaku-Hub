@@ -1,6 +1,6 @@
 package com.ironhack.otakuhub.security;
 
-import com.ironhack.otakuhub.model.User;
+import com.ironhack.otakuhub.model.Userr;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,15 +8,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Arrays;
 import java.util.Collection;
 
-public record SecurityUser(User user) implements UserDetails{
+public record SecurityUser(Userr userr) implements UserDetails{
     @Override
     public String getUsername() {
-        return user.getUsername();
+        return userr.getUsername();
     }
 
     @Override
     public String getPassword() {
-        return user.getPassword();
+        return userr.getPassword();
     }
 
     @Override
@@ -26,7 +26,7 @@ public record SecurityUser(User user) implements UserDetails{
 
     @Override
     public boolean isAccountNonLocked() {
-        return user.getIsAccountNonLocked();
+        return userr.getIsAccountNonLocked();
     }
 
     @Override
@@ -41,7 +41,7 @@ public record SecurityUser(User user) implements UserDetails{
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.stream(user
+        return Arrays.stream(userr
                 .getRoles()
                 .split(","))
                 .map(SimpleGrantedAuthority::new)

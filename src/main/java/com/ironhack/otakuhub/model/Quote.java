@@ -10,14 +10,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Quote {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String anime;
-    private String character;
+
+    private String characters;
+
     private String quote;
 
     @ManyToOne
-    private User user;
+    private Userr userr;
 }

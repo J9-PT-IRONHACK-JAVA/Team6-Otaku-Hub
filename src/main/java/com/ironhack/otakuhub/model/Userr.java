@@ -14,22 +14,28 @@ import static com.ironhack.otakuhub.model.Level.NOOB;
 @Entity
 @Table(name = "users")
 @Data
-public class User {
+public class Userr {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String username;
+
     private String password;
+
     private String roles;
+
     private Boolean isAccountNonLocked;
+
     @CreationTimestamp
     private Instant createdAt;
+
     @UpdateTimestamp
     private Instant lastUpdatedAt;
 
     private Integer points;
+
     private Level level;
 
     @OneToMany
@@ -41,7 +47,7 @@ public class User {
     private List<Quote> animeQuotes;
 
 
-    public User(String username, String password, String roles) {
+    public Userr(String username, String password, String roles) {
         this.username = username;
         this.password = password;
         this.roles = roles;
@@ -50,7 +56,7 @@ public class User {
         this.level = NOOB;
     }
 
-    public User() {
+    public Userr() {
         isAccountNonLocked = true;
     }
 }
