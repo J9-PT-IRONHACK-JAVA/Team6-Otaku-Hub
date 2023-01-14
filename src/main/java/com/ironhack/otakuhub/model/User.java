@@ -3,12 +3,12 @@ package com.ironhack.otakuhub.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ironhack.otakuhub.enums.Level;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Tolerate;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -19,6 +19,7 @@ import static com.ironhack.otakuhub.enums.Level.NOOB;
 @Entity
 @Table(name = "users")
 @Data
+@AllArgsConstructor
 public class User {
 
     @Id
@@ -26,6 +27,7 @@ public class User {
     private Long id;
     @Column(unique = true)
     private String username;
+
     private String password;
     private String roles;
     private Boolean isAccountNonLocked;
@@ -45,6 +47,8 @@ public class User {
     @OneToMany
     //@JsonIgnore
     private List<Quote> animeQuotes;
+
+    //private static  PasswordEncoder passwordEncoder ;
 
 
     public User(String username, String password, String roles) {
@@ -74,6 +78,10 @@ public class User {
         }
 
     }
+
+   // public void setPassword(String password) {
+   //     this.password = passwordEncoder.encode(password);
+   // }
 
 
 
@@ -107,4 +115,5 @@ public class User {
         }
 
     }
+
 }

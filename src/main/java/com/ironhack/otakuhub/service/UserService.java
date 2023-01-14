@@ -65,7 +65,13 @@ public class UserService {
         var userToUpdate = findUserByUsername (username);
 
         username1.ifPresent (userToUpdate::setUsername);
-        password.ifPresent(userToUpdate::setPassword);
+
+        if (password.isPresent()) {
+            userToUpdate.setPassword(passwordEncoder.encode(password.orElseThrow()));
+        }
+
+       // password.ifPresent(userToUpdate::passwordEncoder.encode(password));
+
         roles.ifPresent(userToUpdate::setRoles);
         isAccountNonLocked.ifPresent(userToUpdate::setIsAccountNonLocked);
         points.ifPresent(userToUpdate::setPoints);
