@@ -93,6 +93,10 @@ Ngrok betrayed us... :sob:
 But comming soon!! :wink:
 
 <br>
+
+Link for Otaku_Hub Front: https://github.com/grumps711/otaku-hub-front-p4b
+Open and run serve with VScode
+
 <hr>
 
 _Developed by:_
