@@ -94,7 +94,9 @@ But comming soon!! :wink:
 
 <br>
 
+# Here it is!! Frontend Otaku Hub (VSCode)
 Link for Otaku_Hub Front: https://github.com/grumps711/otaku-hub-front-p4b
+<br>
 Open and run serve with VScode
 
 <hr>
