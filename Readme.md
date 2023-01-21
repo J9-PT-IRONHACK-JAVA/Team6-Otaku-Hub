@@ -95,11 +95,9 @@ But comming soon!! :wink:
 # Here it is!! Frontend Otaku Hub (VSCode)
 Link for Otaku_Hub Front: https://github.com/grumps711/otaku-hub-front-p4b
 <br>
-1. Open with VScode
-<br>
-2. In terminal -> npm install
-<br>
-3. In terminal -> npm run serve
+1. Open with VScode <br>
+2. In terminal -> npm install <br>
+3. In terminal -> npm run serve<br>
 
 <hr>
 
